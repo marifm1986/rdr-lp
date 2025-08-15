@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Star, Quote, Shield, Award, CheckCircle, TrendingUp } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Star, Quote, Shield, Award, CheckCircle } from 'lucide-react';
+import { Button } from './ui/Button';
 
-export function TestimonialsSection() {
+interface TestimonialsSectionProps {
+  openModal: () => void;
+}
+
+export function TestimonialsSection({ openModal }: TestimonialsSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [counters, setCounters] = useState({ clients: 0, debt: 0, years: 0 });
 
@@ -144,6 +149,20 @@ export function TestimonialsSection() {
              style={{ transitionDelay: '0.6s' }}>
             Real stories from real people who regained their financial freedom
           </p>
+          
+          {/* First CTA Button */}
+          <div className={`mt-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+               style={{ transitionDelay: '0.7s' }}>
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="bg-white text-[#1E3A5F] hover:bg-[#D4AF37] hover:text-[#1E3A5F] border-white hover:border-[#D4AF37] transition-all duration-300 animate-pulse hover:animate-none hover:scale-110 hover:shadow-2xl hover:shadow-[#D4AF37]/50 relative group" 
+              onClick={openModal}
+            >
+              <span className="relative z-10">Start Your Debt Relief Journey</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/20 to-[#8B1538]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Button>
+          </div>
         </div>
 
         {/* Animated Rating Display */}
@@ -173,6 +192,23 @@ export function TestimonialsSection() {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Second CTA Button */}
+        <div className={`text-center mb-12 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+             style={{ transitionDelay: '0.9s' }}>
+          <div className="relative inline-block">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] via-[#8B1538] to-[#D4AF37] rounded-lg blur opacity-75 animate-pulse group-hover:opacity-100 transition duration-1000"></div>
+            <Button 
+              variant="primary" 
+              size="lg" 
+              className="relative bg-[#D4AF37] hover:bg-[#B8941F] border-[#D4AF37] hover:border-[#B8941F] text-[#1E3A5F] animate-bounce hover:animate-none hover:scale-110 hover:shadow-2xl hover:shadow-[#D4AF37]/60 group" 
+              onClick={openModal}
+            >
+              <span className="relative z-10 font-bold">Get Free Quote Like These Clients</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Button>
           </div>
         </div>
 
@@ -237,6 +273,27 @@ export function TestimonialsSection() {
           ))}
         </div>
 
+        {/* Third CTA Button */}
+        <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+             style={{ transitionDelay: '1.7s' }}>
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-500 animate-glow group">
+            <h3 className="text-2xl font-bold text-white mb-4 animate-fade-in">Ready to Join Them?</h3>
+            <p className="text-gray-300 mb-6 animate-fade-in-delayed">Take the first step towards financial freedom today</p>
+            <div className="relative inline-block">
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#8B1538] via-[#D4AF37] to-[#8B1538] rounded-lg blur-sm opacity-60 animate-pulse group-hover:opacity-100 transition duration-1000"></div>
+              <Button 
+                variant="primary" 
+                size="lg" 
+                className="relative bg-[#8B1538] hover:bg-[#6B1028] border-[#8B1538] hover:border-[#6B1028] animate-pulse hover:animate-none hover:scale-125 hover:shadow-2xl hover:shadow-[#8B1538]/60 group transform hover:rotate-1 transition-all duration-500" 
+                onClick={openModal}
+              >
+                <span className="relative z-10 font-bold text-lg">Get Your Personalized Quote</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </Button>
+            </div>
+          </div>
+        </div>
+
         {/* Animated Trust Badges */}
         <div className={`bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
              style={{ transitionDelay: '1.6s' }}>
@@ -283,6 +340,24 @@ export function TestimonialsSection() {
               {counters.years}+
             </div>
             <div className="text-white group-hover:text-[#D4AF37] transition-colors duration-300">Years Experience</div>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className={`mt-16 text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+             style={{ transitionDelay: '2.5s' }}>
+          <div className="relative inline-block group">
+            <div className="absolute -inset-3 bg-gradient-to-r from-[#D4AF37] via-white to-[#D4AF37] rounded-lg blur-lg opacity-70 animate-ping group-hover:opacity-100 transition duration-1000"></div>
+            <Button 
+              variant="primary" 
+              size="lg" 
+              className="relative hover-float bg-[#D4AF37] hover:bg-[#B8941F] border-[#D4AF37] hover:border-[#B8941F] animate-bounce hover:animate-none hover:scale-125 hover:shadow-2xl hover:shadow-[#D4AF37]/80 group transform hover:-rotate-2 transition-all duration-700" 
+              onClick={openModal}
+            >
+              <span className="relative z-10 font-bold text-xl">Get Your Free Debt Relief Quote</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+            </Button>
           </div>
         </div>
       </div>
@@ -334,6 +409,53 @@ export function TestimonialsSection() {
         
         .animate-glow {
           animation: glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        
+        @keyframes heartbeat {
+          0%, 100% { transform: scale(1); }
+          25% { transform: scale(1.05); }
+          50% { transform: scale(1.1); }
+          75% { transform: scale(1.05); }
+        }
+        
+        @keyframes rainbow {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        
+        .animate-fade-in {
+          animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animate-fade-in-delayed {
+          animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .animate-shimmer {
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+          background-size: 200% 100%;
+          animation: shimmer 2s infinite;
+        }
+        
+        .animate-heartbeat {
+          animation: heartbeat 2s ease-in-out infinite;
+        }
+        
+        .animate-rainbow {
+          background: linear-gradient(45deg, #D4AF37, #8B1538, #D4AF37, #8B1538);
+          background-size: 400% 400%;
+          animation: rainbow 3s ease infinite;
         }
       `}</style>
     </section>

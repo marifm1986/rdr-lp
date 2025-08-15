@@ -1,7 +1,13 @@
 import React from 'react';
 import { DollarSign, Users, Layers, FileText, BarChart3, Clock, Check } from 'lucide-react';
 import { AnimatedElement } from './AnimatedElement';
-export function AdvantagesSection() {
+import { Button } from './ui/Button';
+
+interface AdvantagesSectionProps {
+  openModal: () => void;
+}
+
+export function AdvantagesSection({ openModal }: AdvantagesSectionProps) {
   const advantages = [{
     title: 'No Upfront Fees',
     description: "We don't charge any upfront fees for our debt relief services. You only pay when we successfully negotiate and settle your debts.",
@@ -89,28 +95,11 @@ export function AdvantagesSection() {
               </div>
             </AnimatedElement>)}
         </div>
-        <AnimatedElement animation="fade-up" delay={0.8}>
-          <div className="mt-16 p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[{
-              number: '10+',
-              label: 'Years Experience'
-            }, {
-              number: '25,000+',
-              label: 'Clients Helped'
-            }, {
-              number: '$500M+',
-              label: 'Debt Resolved'
-            }, {
-              number: '48%',
-              label: 'Average Savings'
-            }].map((stat, index) => <div key={index} className="text-center">
-                  <h3 className="text-3xl md:text-4xl font-bold text-[#8B1538] mb-2">
-                    {stat.number}
-                  </h3>
-                  <p className="text-[#4A5568]">{stat.label}</p>
-                </div>)}
-            </div>
+        <AnimatedElement animation="fade-up" delay={1}>
+          <div className="flex justify-center mt-12">
+            <Button variant="primary" size="lg" className="hover-float" onClick={openModal}>
+              Get Your Free Debt Relief Quote
+            </Button>
           </div>
         </AnimatedElement>
       </div>

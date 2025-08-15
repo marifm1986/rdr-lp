@@ -1,8 +1,12 @@
-import React from 'react';
 import { Button } from './ui/Button';
 import { Calendar, ChevronRight, ChevronLeft, ArrowRight } from 'lucide-react';
 import { AnimatedElement } from './AnimatedElement';
-export function BlogSection() {
+
+interface BlogSectionProps {
+  openModal: () => void;
+}
+
+export function BlogSection({ openModal }: BlogSectionProps) {
   const blogPosts = [{
     id: 1,
     title: 'Smart Travel: 7 Credit Card Pitfalls to Dodge This Summer',
@@ -65,18 +69,12 @@ export function BlogSection() {
               </h3>
               <p className="text-[#4A5568] mb-4">{post.excerpt}</p>
             </div>
-            <div className="px-6 pb-6">
-              <Button variant="secondary" size="sm" className="group-hover:bg-[#8B1538] group-hover:text-white group-hover:border-transparent transition-colors">
-                <span>READ MORE</span>
-                <ArrowRight size={14} className="ml-2 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
           </div>
         </AnimatedElement>)}
       </div>
       <AnimatedElement animation="fade-up" delay={0.8}>
         <div className="flex justify-center mt-12">
-          <Button variant="secondary" size="lg" className="hover-float">
+          <Button variant="secondary" size="lg" className="hover-float" onClick={openModal}>
             <span>View All Articles</span>
             <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
           </Button>

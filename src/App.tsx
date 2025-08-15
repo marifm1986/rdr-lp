@@ -45,10 +45,10 @@ export function App() {
       <main>
         <HeroSection openModal={openModal} />
         <ProcessSection openModal={openModal} />
-        <AdvantagesSection />
+        <AdvantagesSection openModal={openModal} />
         <MissionSection openModal={openModal} />
-        <TestimonialsSection />
-        <BlogSection />
+        <TestimonialsSection openModal={openModal} />
+        <BlogSection openModal={openModal} />
       </main>
       <Footer openModal={openModal} />
       <FormModal 
