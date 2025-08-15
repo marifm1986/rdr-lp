@@ -8,7 +8,7 @@ interface ProcessSectionProps {
 export function ProcessSection({
   openModal
 }: ProcessSectionProps) {
-  return <section className="py-24 bg-white relative overflow-hidden">
+  return <section id='how-it-works' className="py-24 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-40 h-40 bg-[#8B1538]/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#1E3A5F]/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
       <div className="container mx-auto px-4 relative">

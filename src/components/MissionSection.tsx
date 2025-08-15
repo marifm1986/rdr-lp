@@ -71,7 +71,7 @@ export function MissionSection({ openModal }: MissionSectionProps) {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id='about' className="py-20 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div 

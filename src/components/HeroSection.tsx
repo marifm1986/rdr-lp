@@ -13,7 +13,7 @@ export function HeroSection({ openModal }: HeroSectionProps) {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-r from-[#1E3A5F] to-[#0f1c2e] py-24 overflow-hidden">
+    <section id='services' className="relative bg-gradient-to-r from-[#1E3A5F] to-[#0f1c2e] py-24 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div 
@@ -72,10 +72,10 @@ export function HeroSection({ openModal }: HeroSectionProps) {
                 <span className="relative z-10">GET STARTED NOW</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
-              <button className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center group hover:scale-105 hover:-translate-y-1">
+             {/*  <button className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center group hover:scale-105 hover:-translate-y-1">
                 <span>Learn More</span>
                 <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-2" />
-              </button>
+              </button> */}
             </div>
             
             {/* Rating and Trust Badges */}
